@@ -1,10 +1,10 @@
-import React from 'react';
-import AboutPage from './Pages/AboutPage';
+import React from "react";
+import AboutPage from "./Pages/AboutPage";
 
 function App() {
   return (
     <>
-    <AboutPage/>
+      <AboutPage />
     </>
   );
 }
