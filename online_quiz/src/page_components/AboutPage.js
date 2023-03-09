@@ -1,12 +1,12 @@
 import React from "react";
-import "./AboutPage.css";
+import "../css/AboutPage.css";
 import Image from "react-bootstrap/Image";
 import { Container } from "react-bootstrap";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 // document.body.style = 'background: gray;';
-export default function AboutPage() {
+const AboutPage = () => {
   return (
     /**Mostly text that explains our situation and our goals + images */
     <>
@@ -79,19 +79,19 @@ export default function AboutPage() {
             <Col xs lg="2">
               <div>
                 <img
-                  class="quote-bubble"
+                  className="quote-bubble"
                   src="https://www.pngkit.com/png/detail/34-347000_black-businessman-png-worth-the-wait.png"
                 ></img>
               </div>
             </Col>
             <Col md="auto">
-              <div class="quote">
-                <blockquote class="blockquote">
+              <div className="quote">
+                <blockquote className="blockquote">
                   <p>
                     "We have revolutionized how people think. Bing chilling"
                   </p>
                 </blockquote>
-                <figcaption class="blockquote-footer">
+                <figcaption className="blockquote-footer">
                   Aurimas Gasparas,{" "}
                   <cite title="Source Title">CEO of QuizHub</cite>
                 </figcaption>
@@ -103,3 +103,5 @@ export default function AboutPage() {
     </>
   );
 }
+
+export default AboutPage;
