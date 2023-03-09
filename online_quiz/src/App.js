@@ -7,6 +7,6 @@ const App = () => {
       <AboutPage />
     </>
   );
-}
+};
 
 export default App;

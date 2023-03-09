@@ -4,8 +4,25 @@ import Image from "react-bootstrap/Image";
 import { Container } from "react-bootstrap";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import logo1 from "../assets/aboutPage1.jpg";
+import logo2 from "../assets/aboutPage2.jpg";
+import logo3 from "../assets/aboutPage3.jpg";
+import logo4 from "../assets/aboutPage4.avif";
 
-// document.body.style = 'background: gray;';
+function debounce(fn, ms) {
+  let timer;
+
+  return (_) => {
+    clearTimeout(timer);
+
+    timer = setTimeout((_) => {
+      timer = null;
+
+      fn.apply(this, arguments);
+    }, ms);
+  };
+}
+
 const AboutPage = () => {
   return (
     /**Mostly text that explains our situation and our goals + images */
@@ -20,10 +37,7 @@ const AboutPage = () => {
           sets in programming, design, and marketing to bring this project to
           life.
         </p>
-        <img
-          className="image1"
-          src="https://media.istockphoto.com/id/1167992655/photo/college-students-with-books-smiling-to-camera-over-grey-wall.jpg?s=612x612&w=0&k=20&c=YYQ1iSCklhc3FaVSCP9jUzn0CfG6SeMVOI4F-5_gJy8="
-        ></img>
+        <img className="image1" src={logo1} />
       </div>
 
       <div className="container2">
@@ -35,10 +49,7 @@ const AboutPage = () => {
           quizzes, ranging from general knowledge to specialized subjects, to
           cater to the different interests of our users.
         </p>
-        <img
-          className="image2"
-          src="https://st2.depositphotos.com/3591429/8626/i/450/depositphotos_86260782-stock-photo-group-of-diversity-people-celebrating.jpg"
-        ></img>
+        <img className="image2" src={logo2} />
       </div>
 
       <div className="container1">
@@ -50,10 +61,7 @@ const AboutPage = () => {
           make learning fun and accessible to everyone, and we believe that our
           quiz platform is a step in that direction.
         </p>
-        <img
-          className="image1"
-          src="https://www.starmind.ai/hubfs/AdobeStock_416047176.jpg"
-        ></img>
+        <img className="image1" src={logo3} />
       </div>
 
       <div className="container2">
@@ -65,10 +73,7 @@ const AboutPage = () => {
           work together as a team and for the support we have received from our
           peers and mentors.
         </p>
-        <img
-          className="image2"
-          src="https://img.freepik.com/free-photo/business-people-shaking-hands-meeting-room_53876-15185.jpg"
-        ></img>
+        <img className="image2" src={logo4} />
       </div>
       <br></br>
 
@@ -102,6 +107,6 @@ const AboutPage = () => {
       </figure>
     </>
   );
-}
+};
 
 export default AboutPage;
