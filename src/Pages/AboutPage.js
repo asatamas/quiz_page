@@ -72,6 +72,7 @@ export default function AboutPage() {
       </div>
       <br></br>
 
+      {/*Quote container  */}
       <figure>
         <Container>
           <Row className="justify-content-md-center">
