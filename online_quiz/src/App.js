@@ -1,7 +1,7 @@
 import React from "react";
-import AboutPage from "./Pages/AboutPage";
+import AboutPage from "./page_components/AboutPage";
 
-function App() {
+const App = () => {
   return (
     <>
       <AboutPage />
