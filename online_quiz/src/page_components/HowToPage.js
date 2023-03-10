@@ -1,5 +1,5 @@
 import React from "react";
-import "./HowToPage.css";
+import "../css/HowToPage.css";
 import { Container } from "react-bootstrap";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
