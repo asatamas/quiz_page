@@ -6,7 +6,7 @@ import HomePage from "./page_components/HomePage";
 const App = () => {
   return (
     <>
-  
+     <HomePage />
     </>
   );
 };
