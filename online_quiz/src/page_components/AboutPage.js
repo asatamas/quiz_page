@@ -1,6 +1,5 @@
 import React from "react";
 import "../css/AboutPage.css";
-import Image from "react-bootstrap/Image";
 import { Container } from "react-bootstrap";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -9,27 +8,13 @@ import logo2 from "../assets/aboutPage2.jpg";
 import logo3 from "../assets/aboutPage3.jpg";
 import logo4 from "../assets/aboutPage4.avif";
 
-function debounce(fn, ms) {
-  let timer;
-
-  return (_) => {
-    clearTimeout(timer);
-
-    timer = setTimeout((_) => {
-      timer = null;
-
-      fn.apply(this, arguments);
-    }, ms);
-  };
-}
-
 const AboutPage = () => {
   return (
     /**Mostly text that explains our situation and our goals + images */
     <>
       <h1>About us</h1>
-      <div className="container1">
-        <p className="para1">
+      <div className="about_page-container1">
+        <p className="about_page-para1">
           Our team is a group of passionate students who have come together to
           create a fun and engaging quiz platform on the internet. We believe
           that learning can be both entertaining and educational, and our
@@ -37,11 +22,11 @@ const AboutPage = () => {
           sets in programming, design, and marketing to bring this project to
           life.
         </p>
-        <img className="image1" src={logo1} />
+        <img className="image1-right" src={logo1} />
       </div>
 
-      <div className="container2">
-        <p className="para2">
+      <div className="about_page-container2">
+        <p className="about_page-para2">
           Our quiz platform is designed to cater to a wide range of users, from
           students to adults who are looking to test their knowledge on various
           topics. We have created an intuitive user interface that is easy to
@@ -49,11 +34,11 @@ const AboutPage = () => {
           quizzes, ranging from general knowledge to specialized subjects, to
           cater to the different interests of our users.
         </p>
-        <img className="image2" src={logo2} />
+        <img className="image2-left" src={logo2} />
       </div>
 
-      <div className="container1">
-        <p className="para1">
+      <div className="about_page-container1">
+        <p className="about_page-para1">
           As a team, we have worked tirelessly to ensure that our quiz platform
           is of the highest quality. We have conducted extensive research,
           testing, and development to make sure that the platform is
@@ -61,11 +46,11 @@ const AboutPage = () => {
           make learning fun and accessible to everyone, and we believe that our
           quiz platform is a step in that direction.
         </p>
-        <img className="image1" src={logo3} />
+        <img className="image1-right" src={logo3} />
       </div>
 
-      <div className="container2">
-        <p className="para2">
+      <div className="about_page-container2">
+        <p className="about_page-para2">
           We are thrilled to have created this quiz platform and are excited
           about the possibilities it offers. We hope to continue to develop and
           improve our platform to cater to the needs of our users and provide an
@@ -73,15 +58,15 @@ const AboutPage = () => {
           work together as a team and for the support we have received from our
           peers and mentors.
         </p>
-        <img className="image2" src={logo4} />
+        <img className="image2-left" src={logo4} />
       </div>
       <br></br>
 
-      {/*Quote container  */}
+      {/*Quote at the bottom of the page container  */}
       <figure>
-        <Container>
+        <Container className="about_page-quote">
           <Row className="justify-content-md-center">
-            <Col xs lg="2">
+            <Col xs lg="3">
               <div>
                 <img
                   className="quote-bubble"

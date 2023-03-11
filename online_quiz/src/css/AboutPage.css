@@ -6,41 +6,56 @@ h1 {
 }
 
 /* Changes background color of one paragraph along with the picture */
-.container1 {
+.about_page-container1 {
   overflow: hidden;
+  padding-top: 5%;
+  padding-bottom: 5%;
   /* background-color: rgb(185, 185, 185); */
 }
 
-/* Stlying for the paragraph: position, font, font size */
-.para1 {
+/* Styling for the paragraph: position, font, font size */
+.about_page-para1 {
   display: block;
   width: 35em;
-  margin: 2.5em 6em 4em;
-  padding-top: 30px;
+  margin: 2.5em 5em 3em;
+  padding-top: 35px;
+  padding-left: 35px;
   font-family: Verdana, sans-serif;
   float: left;
   font-size: 20px;
   line-height: 1.8;
+
+  border-inline-start: 4px solid;
+  border-block-start: 4px solid;
+  border-image-source: radial-gradient(
+    circle at top left,
+    black,
+    transparent 30%
+  );
+  border-image-slice: 1;
 }
 
 /* Styling for an image: size, position */
-.image1 {
+.image1-right {
+  display: block;
   width: 500px;
   height: 340px;
-  display: block;
   margin: 0px 200px 15px;
   margin-top: 15px;
   float: right;
   border-top-right-radius: 40%;
+  opacity: 80%;
 }
 
 /* same as others but image and paragraph switched places. background different colour*/
-.container2 {
+.about_page-container2 {
   overflow: hidden;
+  padding-top: 5%;
+  padding-bottom: 5%;
   /* background-color: gray; */
 }
 
-.para2 {
+.about_page-para2 {
   display: block;
   width: 35em;
   margin: 2.5em 5em 3em;
@@ -49,9 +64,19 @@ h1 {
   float: right;
   font-size: 20px;
   line-height: 1.8;
+  text-align: right;
+
+  border-inline-end: solid;
+  border-block-end: 4px solid;
+  border-image-source: radial-gradient(
+    circle at top left,
+    black,
+    transparent 30%
+  );
+  border-image-slice: 1;
 }
 
-.image2 {
+.image2-left {
   width: 500px;
   height: 340px;
   display: block;
@@ -59,6 +84,7 @@ h1 {
   margin-top: 15px;
   float: left;
   border-top-left-radius: 40%;
+  opacity: 80%;
 }
 
 .quote {
