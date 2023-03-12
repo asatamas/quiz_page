@@ -4,10 +4,11 @@ import React from "react";
 export default function NavBar(){
     return (
     <nav className="nav">
-        <Link to="/AboutPage" className="online_quiz">
+        <Link to="/HomePage" className="online_quiz">
             QuizHub
         </Link>
         <ul>
+            <CustomLink to="/HomePage">Home</CustomLink>
             <CustomLink to="/AboutPage">About Us</CustomLink>
             <CustomLink to="/HowToPage">How To</CustomLink>
         </ul>
