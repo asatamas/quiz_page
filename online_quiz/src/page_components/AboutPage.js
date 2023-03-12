@@ -13,7 +13,7 @@ const AboutPage = () => {
     /**Mostly text that explains our situation and our goals + images */
     <>
       <h1>About us</h1>
-      <div className="about_page-container1">
+      <div className="about_page-container">
         <p className="about_page-para1">
           Our team is a group of passionate students who have come together to
           create a fun and engaging quiz platform on the internet. We believe
@@ -25,7 +25,7 @@ const AboutPage = () => {
         <img className="image1-right" src={logo1} />
       </div>
 
-      <div className="about_page-container2">
+      <div className="about_page-container">
         <p className="about_page-para2">
           Our quiz platform is designed to cater to a wide range of users, from
           students to adults who are looking to test their knowledge on various
@@ -37,7 +37,7 @@ const AboutPage = () => {
         <img className="image2-left" src={logo2} />
       </div>
 
-      <div className="about_page-container1">
+      <div className="about_page-container">
         <p className="about_page-para1">
           As a team, we have worked tirelessly to ensure that our quiz platform
           is of the highest quality. We have conducted extensive research,
@@ -49,7 +49,7 @@ const AboutPage = () => {
         <img className="image1-right" src={logo3} />
       </div>
 
-      <div className="about_page-container2">
+      <div className="about_page-container">
         <p className="about_page-para2">
           We are thrilled to have created this quiz platform and are excited
           about the possibilities it offers. We hope to continue to develop and
