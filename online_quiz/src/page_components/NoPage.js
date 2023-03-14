@@ -4,9 +4,9 @@ import "../css/NoPage.css";
 const NoPage = () => {
   return (
     <>
-      <h1 className="NoPage-h">404 Not Found</h1>
+      <h1 className="NoPage-h">Error 404 page not found</h1>
       <p1 className="NoPage-p">
-        Puslapis į kurį bandote nueiti kolkas neegzistuoja arba įvyko klaida.
+        The page you are looking for doesn't exist or another error occurred.
       </p1>
     </>
   );
