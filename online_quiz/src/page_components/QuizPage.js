@@ -11,7 +11,7 @@ const QuizPage = () => {
     <>
       <div className="QPageHeaderContainer">
         <h1 id="home-hdr">Quizzes quizzes quizzes!!!</h1>
-        <p className="home-p">Play as many as you'd like!</p>
+        <p1 className="home-p">Play as many as you'd like!</p1>
       </div>
 
       <div className="QPageQuizzesContainer">
@@ -19,20 +19,20 @@ const QuizPage = () => {
 
         <div className="QPageQuizContainer">
           <div className="QPageQuizInfoContainer">
-            <p className="QPageQuizHeader">
+            <p1 className="QPageQuizHeader">
               Shapes
               <br></br>
-              <p className="QPageQuizText">
+              <p2 className="QPageQuizText">
                 Learn to discern various geometrical shapes.
-              </p>
-            </p>
+              </p2>
+            </p1>
             <img
               className="QPageQuizImage QPageQuizImageBorder"
               src={quizPic1}
             />
           </div>
           <div className="QPageQuizButtonContainer">
-            <Link to="./Quiz1">
+            <Link to="/QuizPage/Quiz1">
               <button className="quiz-btn">Solve quiz</button>
             </Link>
           </div>
@@ -47,17 +47,17 @@ const QuizPage = () => {
               className="QPageQuizImage QPageQuizImageBorder"
               src={quizPic2}
             />
-            <p className="QPageQuizHeader">
+            <p1 className="QPageQuizHeader">
               Planets
               <br></br>
-              <p className="QPageQuizText">
+              <p2 className="QPageQuizText">
                 Learn about our solar system planets.
-              </p>
-            </p>
+              </p2>
+            </p1>
           </div>
 
           <div className="QPageQuizButtonContainer">
-            <Link to="./Quiz2">
+            <Link to="/QuizPage/Quiz2">
               <button className="quiz-btn">Solve quiz</button>
             </Link>
           </div>
@@ -67,11 +67,11 @@ const QuizPage = () => {
 
         <div className="QPageQuizContainer">
           <div className="QPageQuizInfoContainer">
-            <p className="QPageQuizHeader">
+            <p1 className="QPageQuizHeader">
               Fruits
               <br></br>
-              <p className="QPageQuizText">Learn to discern fruits.</p>
-            </p>
+              <p2 className="QPageQuizText">Learn to discern fruits.</p2>
+            </p1>
             <img
               className="QPageQuizImage QPageQuizImageBorder"
               src={quizPic3}
@@ -79,7 +79,7 @@ const QuizPage = () => {
           </div>
 
           <div className="QPageQuizButtonContainer">
-            <Link to="./Quiz3">
+            <Link to="/QuizPage/Quiz3">
               <button className="quiz-btn">Solve quiz</button>
             </Link>
           </div>
