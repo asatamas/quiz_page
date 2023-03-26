@@ -20,7 +20,7 @@ const Quiz = ({ quiz }) => {
           />
         </div>
         <div className="QPageQuizButtonContainer">
-          <Link to="/QuizPage/Quiz1">
+          <Link to="/Question">
             <button className="quiz-btn">Solve quiz</button>
           </Link>
         </div>
