@@ -9,11 +9,8 @@ import Question from "./page_components/Question";
 import { Route, Routes } from "react-router-dom";
 
 const App = () => {
-
-
   return (
     <>
-
       <NavBar />
 
       <Routes>

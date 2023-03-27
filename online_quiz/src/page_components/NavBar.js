@@ -16,7 +16,6 @@ export default function NavBar() {
         <CustomLink to="/AboutPage">About Us</CustomLink>
         <CustomLink to="/HowToPage">How To</CustomLink>
         <CustomLink to="/QuizPage">Quizzes</CustomLink>
-        <CustomLink to="/Question">Question</CustomLink>
         <div class="dot"></div>
       </ul>
     </nav>

@@ -110,9 +110,9 @@ const Question = () => {
         question: "What is the largest planet in our solar system?",
         answers: [
           { text: "Mars", correct: false },
-          { text: "Saturn", correct: true },
+          { text: "Jupiter", correct: true },
           { text: "Earth", correct: false },
-          { text: "Neptune", correct: false },
+          { text: "Saturn", correct: false },
         ],
       },
       {
