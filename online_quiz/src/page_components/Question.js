@@ -1,4 +1,4 @@
-import React from "react";
+import React, { createElement } from "react";
 import "../css/Question.css";
 import "bootstrap/dist/css/bootstrap.css";
 import { useEffect } from "react";
@@ -11,6 +11,7 @@ const Question = () => {
       document.getElementById("question_container");
     const questionElement = document.getElementById("question");
     const answerButtonsElement = document.getElementById("answer_buttons");
+    let counter;
 
     let shuffleQuestions, currentQuestionIndex;
 
@@ -22,6 +23,9 @@ const Question = () => {
 
     function startGame() {
       console.log("Started");
+      counter = 0;
+      questionElement.classList.remove("hide");
+      answerButtonsElement.classList.remove("hide");
       startButton.classList.add("hide");
       shuffleQuestions = questions
         .sort(() => Math.random() - 0.5)
@@ -59,7 +63,7 @@ const Question = () => {
         answerButtonsElement.removeChild(answerButtonsElement.firstChild);
       }
     }
-    /**/
+
     function selectAnswer(e) {
       const selectedButton = e.target;
       const correct = selectedButton.dataset.correct;
@@ -67,11 +71,23 @@ const Question = () => {
       Array.from(answerButtonsElement.children).forEach((button) => {
         setStatusClass(button, button.dataset.correct);
       });
+      if (correct) {
+        counter++;
+      }
       if (shuffleQuestions.length > currentQuestionIndex + 1) {
         nextButton.classList.remove("hide");
       } else {
         startButton.innerText = "Restart";
         startButton.classList.remove("hide");
+        // questionElement.classList.add("hide");
+        // answerButtonsElement.classList.add("hide");
+        const printScore = document.getElementById("question");
+        printScore.classList.add("result_screen");
+        printScore.innerText =
+          "YOU HAVE GOTTEN " +
+          counter +
+          " CORRECT ANSWERS\n" +
+          "Hit 'Restart' for a better score!";
       }
     }
 
@@ -91,21 +107,59 @@ const Question = () => {
 
     const questions = [
       {
-        question: "What is 2+2?",
+        question: "What is the largest planet in our solar system?",
         answers: [
-          { text: 4, correct: true },
-          { text: 10, correct: false },
-          { text: 5, correct: false },
-          { text: 40, correct: false },
+          { text: "Mars", correct: false },
+          { text: "Saturn", correct: true },
+          { text: "Earth", correct: false },
+          { text: "Neptune", correct: false },
         ],
       },
       {
-        question: "What da dog doing?",
+        question: "How many planets are there in our solar system?",
         answers: [
-          { text: "chilling", correct: true },
-          { text: "bruh dead", correct: false },
-          { text: "idk", correct: false },
-          { text: "chilling but better", correct: false },
+          { text: 7, correct: false },
+          { text: 8, correct: true },
+          { text: 9, correct: false },
+          { text: 6, correct: false },
+        ],
+      },
+      {
+        question:
+          "How long does it take for light from the Sun to reach Earth?",
+        answers: [
+          { text: "8 minutes", correct: true },
+          { text: "1 minute", correct: false },
+          { text: "8 seconds", correct: false },
+          { text: "10 hours", correct: false },
+        ],
+      },
+      {
+        question:
+          "In order from the sun, where does Saturn sit in the order of the planets? ",
+        answers: [
+          { text: "Sixth from the sun", correct: true },
+          { text: "Fifth from the sun", correct: false },
+          { text: "Seventh from the sun", correct: false },
+          { text: "Eith from the sun", correct: false },
+        ],
+      },
+      {
+        question: "Which planet is the smallest?",
+        answers: [
+          { text: "Mercury", correct: true },
+          { text: "Venus", correct: false },
+          { text: "Uranus", correct: false },
+          { text: "Mars", correct: false },
+        ],
+      },
+      {
+        question: "How many planets have rings?",
+        answers: [
+          { text: "4", correct: true },
+          { text: "3", correct: false },
+          { text: "2", correct: false },
+          { text: "8", correct: false },
         ],
       },
     ];
