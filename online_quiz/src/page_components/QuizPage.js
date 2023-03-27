@@ -1,10 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../css/QuizPage.css";
 import "../css/HomePage.css";
-import quizPic1 from "../assets/quizPage-1.JPG";
-import quizPic2 from "../assets/quizPage-2.JPG";
-import quizPic3 from "../assets/quizPage-3.JPG";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Quiz from "./Quiz";
 
 const QuizPage = () => {
