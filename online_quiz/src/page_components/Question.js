@@ -59,7 +59,7 @@ const Question = () => {
         answerButtonsElement.removeChild(answerButtonsElement.firstChild);
       }
     }
-
+    /**/
     function selectAnswer(e) {
       const selectedButton = e.target;
       const correct = selectedButton.dataset.correct;

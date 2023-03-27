@@ -1,5 +1,6 @@
 <?php
 
+
 // Allow requests from any origin to access the data returned by PHP script
 header('Access-Control-Allow-Origin: *');
 
