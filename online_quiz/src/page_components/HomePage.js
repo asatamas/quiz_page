@@ -25,7 +25,7 @@ const HomePage = () => {
             <Link to="/QuizPage">
               <button className="quiz-btn">Play a quiz</button>
             </Link>
-            <Link to="/QuizPage">
+            <Link to="/NoPage">
               <button className="quiz-btn">Create a quiz</button>
             </Link>
           </div>
