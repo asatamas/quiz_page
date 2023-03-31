@@ -11,14 +11,14 @@
   display: grid;
   grid-gap: 1.5vw;
   margin: 1vh 3vw;
-  grid-template-columns: repeat(auto-fit, minmax(20vw, 30vw));
+  grid-template-columns: repeat(auto-fit, minmax(25vw, 1fr));
 }
 
 .QPageQuizContainer {
   background-color: #f2f2f2;
   border-radius: 20px;
   padding: 1vw;
-  size: 25dvw;
+  size: 20vh;
 
   display: grid;
   grid-gap: 10px;
@@ -45,8 +45,12 @@
 }
 
 .QPageQuizImage {
+  min-width: 8dvw;
+  min-height: 6dvh;
+  max-width: 12dvw;
+  max-height: 14dvh;
   width: auto;
-  height: 20vh;
+  height: auto;
   opacity: 85%;
 }
 
