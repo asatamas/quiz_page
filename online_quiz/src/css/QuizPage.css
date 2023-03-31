@@ -9,15 +9,16 @@
 .QPageQuizzesContainer {
   box-sizing: content-box;
   display: grid;
-  grid-gap: 2vw;
-  margin: 1vh 4vw;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 1.5vw;
+  margin: 1vh 3vw;
+  grid-template-columns: repeat(auto-fit, minmax(20vw, 30vw));
 }
 
 .QPageQuizContainer {
   background-color: #f2f2f2;
   border-radius: 20px;
   padding: 1vw;
+  size: 25dvw;
 
   display: grid;
   grid-gap: 10px;
