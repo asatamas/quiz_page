@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "../css/QuizPage.css";
-import "../css/HomePage.css";
 import Quiz from "./Quiz";
 
 const QuizPage = () => {
@@ -54,13 +53,13 @@ const QuizPage = () => {
     <>
       {quizzes.length > 0 ? (
         <>
-          <div className="QPageHeaderContainer">
-            <h1 id="home-hdr">Quizzes quizzes quizzes!!!</h1>
-            <p1 className="home-p">Play as many as you'd like!</p1>
-            <p1 className="home-p">Total quizzes: {quizzes.length}</p1>
+          <div className="Head-cont">
+            <h1>Quizzes quizzes quizzes!!!</h1>
+            <p1>Play as many as you'd like!</p1>
+            <p1>Total quizzes: {quizzes.length}</p1>
           </div>
 
-          <div className="QPageQuizzesContainer">
+          <div className="Quizzes-grid">
             {/*comment for line spacing, for readability*/}
 
             {quizzes.map((quiz) => {
@@ -80,8 +79,8 @@ const QuizPage = () => {
           </div>
         </>
       ) : (
-        <div className="QPageHeaderContainer">
-          <h1 id="home-hdr">No Quizzes to show! :(</h1>
+        <div className="Head-cont">
+          <h1>No Quizzes to show! :(</h1>
         </div>
       )}
     </>
