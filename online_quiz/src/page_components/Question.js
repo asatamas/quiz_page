@@ -169,16 +169,54 @@ const Question = () => {
 
     const questions = [
       {
-        question: "What is 2+2?",
+        question: "What is the largest planet in our solar system?",
         answers: [
-          { text: 4, correct: true },
-          { text: 10, correct: false },
-          { text: 5, correct: false },
-          { text: 40, correct: false },
+          { text: "Mars", correct: false },
+          { text: "Jupiter", correct: true },
+          { text: "Earth", correct: false },
+          { text: "Saturn", correct: false },
         ],
       },
       {
-        question: "What da dog doing?",
+        question: "How many planets are there in our solar system?",
+        answers: [
+          { text: 7, correct: false },
+          { text: 8, correct: true },
+          { text: 9, correct: false },
+          { text: 6, correct: false },
+        ],
+      },
+      {
+        question:
+          "How long does it take for light from the Sun to reach Earth?",
+        answers: [
+          { text: "8 minutes", correct: true },
+          { text: "1 minute", correct: false },
+          { text: "8 seconds", correct: false },
+          { text: "10 hours", correct: false },
+        ],
+      },
+      {
+        question:
+          "In order from the sun, where does Saturn sit in the order of the planets? ",
+        answers: [
+          { text: "Sixth from the sun", correct: true },
+          { text: "Fifth from the sun", correct: false },
+          { text: "Seventh from the sun", correct: false },
+          { text: "Eith from the sun", correct: false },
+        ],
+      },
+      {
+        question: "Which planet is the smallest?",
+        answers: [
+          { text: "Mercury", correct: true },
+          { text: "Venus", correct: false },
+          { text: "Uranus", correct: false },
+          { text: "Mars", correct: false },
+        ],
+      },
+      {
+        question: "How many planets have rings?",
         answers: [
           { text: 7, correct: false },
           { text: 8, correct: true },

@@ -1,39 +1,58 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+
 .nav {
-  background-color: #050404;
+  background-color: #caf0f8;
   color: rgb(30, 216, 223);
   display: flex;
   justify-content: space-between;
   align-items: stretch;
   gap: 2rem;
   padding: 0 1rem;
+  text-align: right;
 }
 
-.online_quiz {
-  font-size: 3rem;
-  font-family: "serif";
+.online_quiz img {
+  height: 65px;
 }
 
 .nav ul {
-  padding: 0;
+  padding: 22px 0;
   margin: 0;
   list-style: none;
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 .nav a {
-  color: inherit;
+  position: relative;
+  display: inline-block;
+  padding: 4px 0;
+  font-family: Lato, sans-serif;
+  color: #00b4d8;
   text-decoration: none;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  padding: 0.25rem;
+  text-transform: uppercase;
+  transition: 0.5s;
+  font-weight: bold;
 }
 
-.nav la.active {
-  background-color: #444343;
+.nav a::after {
+  position: absolute;
+  content: "";
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #3498db;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s;
 }
 
-.nav la:hover {
-  background-color: #aaa9a9;
+.nav a:hover {
+  color: #03045e;
+}
+
+.nav a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
 }

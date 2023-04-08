@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import "../css/HomePage.css";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
@@ -25,7 +25,7 @@ const HomePage = () => {
             <Link to="/QuizPage">
               <button className="quiz-btn">Play a quiz</button>
             </Link>
-            <Link to="/QuizPage">
+            <Link to="/NoPage">
               <button className="quiz-btn">Create a quiz</button>
             </Link>
           </div>
