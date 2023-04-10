@@ -86,7 +86,7 @@ const Question = () => {
       question.answers.forEach((answer) => {
         const button = document.createElement("button");
         button.innerText = answer.text;
-        button.classList.add("btn");
+        button.classList.add("question_btn");
         if (answer.correct) {
           button.dataset.correct = answer.correct;
         }
@@ -228,17 +228,17 @@ const Question = () => {
           <div id="question_container" className="hide">
             <div id="question">Question</div>
             <div id="answer_buttons" className="btn-grid">
-              <button className="btn">Answer1</button>
-              <button className="btn">Answer2</button>
-              <button className="btn">Answer3</button>
-              <button className="btn">Answer4</button>
+              <button className="question_btn">Answer1</button>
+              <button className="question_btn">Answer2</button>
+              <button className="question_btn">Answer3</button>
+              <button className="question_btn">Answer4</button>
             </div>
           </div>
           <div className="controls">
-            <button id="start_btn" className="start_button btn">
+            <button id="start_btn" className="start_button question_btn">
               Start
             </button>
-            <button id="next_btn" className="next_button btn hide">
+            <button id="next_btn" className="next_button question_btn hide">
               Next
             </button>
           </div>

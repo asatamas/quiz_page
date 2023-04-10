@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../css/LogInPage.css";
+//import "../css/LogInPage.css";
 import { Container, Form, Button } from "react-bootstrap";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
