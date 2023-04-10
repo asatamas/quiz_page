@@ -82,7 +82,7 @@ form button:hover {
 .login-container {
   height: calc(
     100vh - 120px
-  ); /* Set the height of the container to be 100% of the viewport height minus the height of the Contact Us container */
+  ); /* Set the height of the container to be 100% of the viewport height minus the height of the Contact Us container */ 
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -91,4 +91,4 @@ form button:hover {
 
 .contact-container {
   margin-top: 150px;
-}
+} 
