@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 const Quiz = ({ quiz, questions }) => {
   return (
     <>
+    {console.log(questions)}
       <Link to="/Question" className="QPageLinkFont">
         <div className="QPageQuizContainer">
           <div className="QPageQuizInfoContainer">
