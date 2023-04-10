@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from 'react-router-dom';
 import "../css/QuizPage.css";
 import defaultImg from "../assets/default.jpg";
 
