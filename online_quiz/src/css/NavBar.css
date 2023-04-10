@@ -1,8 +1,26 @@
 @import url(https://fonts.googleapis.com/css?family=Lato);
 
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+:root {
+  --clr-primary: #00b4d8;
+  --clr-primary-light-1: #90e0ef;
+  --clr-primary-light-2: #caf0f8;
+  --clr-primary-dark-1: #0077b6;
+  --clr-primary-dark-2: #03045e;
+}
+
 .nav {
-  background-color: #caf0f8;
-  color: rgb(30, 216, 223);
+  background-color: var(--clr-primary-light-2);
+  color: var(--clr-primary);
   display: flex;
   justify-content: space-between;
   align-items: stretch;
@@ -12,6 +30,7 @@
 }
 
 .online_quiz img {
+  width: 100%;
   height: 65px;
 }
 
@@ -29,7 +48,7 @@
   display: inline-block;
   padding: 4px 0;
   font-family: Lato, sans-serif;
-  color: #00b4d8;
+  color: var(--clr-primary);
   text-decoration: none;
   text-transform: uppercase;
   transition: 0.5s;
@@ -43,14 +62,14 @@
   left: 0;
   width: 100%;
   height: 3px;
-  background: #3498db;
+  background: var(--clr-primary-dark-1);
   transform: scaleX(0);
   transform-origin: right;
   transition: transform 0.5s;
 }
 
 .nav a:hover {
-  color: #03045e;
+  color: var(--clr-primary-dark-2);
 }
 
 .nav a:hover::after {
