@@ -5,13 +5,16 @@ import defaultImg from "../assets/default.jpg";
 const Quiz = ({ quiz, questions }) => {
   return (
     <>
-      <div className="Quiz-cont">
-        <div className="Quiz-info">
-          <div>
-            <p className="Quiz-head">{quiz.name}</p>
-          </div>
-          <div>
-            <p className="Quiz-text">{quiz.description}</p>
+    {console.log(questions)}
+      <Link to="/Question" className="QPageLinkFont">
+        <div className="QPageQuizContainer">
+          <div className="QPageQuizInfoContainer">
+            <div>
+              <p className="QPageQuizHeader">{quiz.name}</p>
+            </div>
+            <div>
+              <p className="QPageQuizText">{quiz.description}</p>
+            </div>
           </div>
         </div>
         <div className="Quiz-cont">
@@ -28,7 +31,7 @@ const Quiz = ({ quiz, questions }) => {
           <p className="Quiz-head">Questions : {questions.length} </p>
           {/* answers array can be accesed via questions.answers */}
         </div>
-      </div>
+      </Link>
     </>
   );
 };

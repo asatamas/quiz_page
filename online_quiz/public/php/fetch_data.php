@@ -1,20 +1,14 @@
 <?php
 
-
-// Allow requests from any origin to access the data returned by PHP script
+// Allow requests from any origin (port) to access the data returned by PHP script
 header('Access-Control-Allow-Origin: *');
 
-
-
-// Define parameters of database
-define('DB_HOST', 'localhost');
-define('DB_USER', 'gigachad');
-define('DB_PASS', '123456');
-define('DB_NAME', 'joemama');
+// Include file with database server configurations
+include 'config.php';
 
 
 // Connect to the database
-$conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+$conn = new mysqli(config::DB_HOST, config::DB_USER, config::DB_PASS, config::DB_NAME);
 if ($conn->connect_errno) {
     http_response_code(500);
     echo json_encode(['error' => 'Failed to connect to database']);
