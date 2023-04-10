@@ -3,11 +3,9 @@ import "../css/Question.css";
 import "bootstrap/dist/css/bootstrap.css";
 import { useEffect } from "react";
 import { useState } from "react";
-//import Timer from "./Timer";
 import $ from "jquery";
 
 const Question = () => {
-  //const [timer, setTimer] = useState(5);
   let timer = 5;
   let intervalIds = [];
   useEffect(() => {
@@ -17,7 +15,6 @@ const Question = () => {
       document.getElementById("question_container");
     const questionElement = document.getElementById("question");
     const answerButtonsElement = document.getElementById("answer_buttons");
-    let counter;
     let score;
 
     let shuffleQuestions, currentQuestionIndex;
@@ -30,8 +27,7 @@ const Question = () => {
 
     //TIMER
     //------------------------------------------------------------------------
-
-    function normalTimer(correct) {
+    function normalTimer() {
       clearIntervals();
       timer = 5;
       $(".timer").text(5);
@@ -40,7 +36,6 @@ const Question = () => {
         setInterval(() => {
           timer--;
           $(".timer").text(timer);
-          //console.log("  Time: " + timer);
 
           if (timer < 0) {
             $(".timer").text(" ");
@@ -68,7 +63,6 @@ const Question = () => {
 
     function startGame() {
       console.log("Started");
-      counter = 0;
       score = 0;
       $(".quiz_score").text("Current score: " + score);
       questionElement.classList.remove("hide");
@@ -86,7 +80,7 @@ const Question = () => {
     }
 
     function showQuestion(question) {
-      normalTimer(false, false);
+      normalTimer();
       console.log("intervalIDS: " + intervalIds.length);
       questionElement.innerText = question.question;
       question.answers.forEach((answer) => {
@@ -125,7 +119,6 @@ const Question = () => {
         setStatusClass(button, button.dataset.correct);
       });
       if (correct) {
-        counter++;
         calculateScore();
       }
       if (shuffleQuestions.length > currentQuestionIndex + 1) {
@@ -203,44 +196,6 @@ const Question = () => {
           { text: "Sixth from the sun", correct: true },
           { text: "Fifth from the sun", correct: false },
           { text: "Seventh from the sun", correct: false },
-          { text: "Eith from the sun", correct: false },
-        ],
-      },
-      {
-        question: "Which planet is the smallest?",
-        answers: [
-          { text: "Mercury", correct: true },
-          { text: "Venus", correct: false },
-          { text: "Uranus", correct: false },
-          { text: "Mars", correct: false },
-        ],
-      },
-      {
-        question: "How many planets have rings?",
-        answers: [
-          { text: 7, correct: false },
-          { text: 8, correct: true },
-          { text: 9, correct: false },
-          { text: 6, correct: false },
-        ],
-      },
-      {
-        question:
-          "How long does it take for light from the Sun to reach Earth?",
-        answers: [
-          { text: "8 minutes", correct: true },
-          { text: "1 minute", correct: false },
-          { text: "8 seconds", correct: false },
-          { text: "10 hours", correct: false },
-        ],
-      },
-      {
-        question:
-          "In order from the sun, where does Saturn sit in the order of the planets? ",
-        answers: [
-          { text: "Sixth from the sun", correct: true },
-          { text: "Fifth from the sun", correct: false },
-          { text: "Seventh from the sun", correct: false },
           { text: "Eigth from the sun", correct: false },
         ],
       },
@@ -256,10 +211,10 @@ const Question = () => {
       {
         question: "How many planets have rings?",
         answers: [
-          { text: "4", correct: true },
-          { text: "3", correct: false },
-          { text: "2", correct: false },
-          { text: "8", correct: false },
+          { text: 7, correct: false },
+          { text: 4, correct: true },
+          { text: 5, correct: false },
+          { text: 6, correct: false },
         ],
       },
     ];
