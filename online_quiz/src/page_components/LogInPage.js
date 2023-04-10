@@ -18,10 +18,11 @@ export default function LoginPage() {
     <>
       <h1>Login to QuizHub</h1>
       <div className="container1">
-        <Form onSubmit={handleSubmit}>
+        <Form className="login-form" onSubmit={handleSubmit}>
           <Form.Group controlId="formBasicEmail">
-            <Form.Label>Email address</Form.Label>
+            <Form.Label className="login-label">Email address</Form.Label>
             <Form.Control
+              className="login-input"
               type="email"
               placeholder="Enter email"
               value={email}
@@ -31,6 +32,7 @@ export default function LoginPage() {
           <Form.Group controlId="formBasicPassword">
             <Form.Label>Password</Form.Label>
             <Form.Control
+              className="login-input"
               type="password"
               placeholder="Password"
               value={password}
