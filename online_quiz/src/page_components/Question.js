@@ -117,6 +117,7 @@ const Question = () => {
       setStatusClass(document.body, correct);
       Array.from(answerButtonsElement.children).forEach((button) => {
         setStatusClass(button, button.dataset.correct);
+        button.classList.add("no-click");
       });
       if (correct) {
         calculateScore();
