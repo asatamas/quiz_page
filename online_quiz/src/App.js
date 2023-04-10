@@ -23,6 +23,8 @@ const App = () => {
         <Route path="/LogInPage" element={<LogInPage />} />
         <Route path="*" element={<NoPage />} />
       </Routes>
+
+      <footer>{/*footer*/}</footer>
     </>
   );
 };

@@ -1,3 +1,11 @@
+:root {
+  --clr-primary: #00b4d8;
+  --clr-primary-light-1: #90e0ef;
+  --clr-primary-light-2: #caf0f8;
+  --clr-primary-dark-1: #0077b6;
+  --clr-primary-dark-2: #03045e;
+}
+
 .Head-cont {
   display: flex;
   flex-direction: column;
