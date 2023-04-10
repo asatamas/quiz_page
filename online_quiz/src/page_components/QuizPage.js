@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import "../css/QuizPage.css";
 import Quiz from "./Quiz";
+import Loading from "./Loading";
 
 const QuizPage = () => {
   const [quizzes, setQuizzes] = useState([]);
   const [questionsData, setQuestions] = useState([]);
   const [answersData, setAnswers] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const fetchData = async () => {
     try {
@@ -14,6 +16,7 @@ const QuizPage = () => {
       );
       const result = await response.json();
       setQuizzes(result);
+      setLoading(false);
     } catch (error) {
       console.error(error);
     }
@@ -44,10 +47,16 @@ const QuizPage = () => {
   };
 
   useEffect(() => {
-    fetchData();
     fetchQuestionData();
     fetchAnswersData();
+    fetchData();
   }, []);
+
+  if(loading) {
+    return (
+      <Loading/>
+    );
+  }
 
   return (
     <>

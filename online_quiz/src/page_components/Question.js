@@ -1,9 +1,13 @@
-import React, { createElement } from "react";
+import React, { createElement, useRef } from "react";
 import "../css/Question.css";
 import "bootstrap/dist/css/bootstrap.css";
 import { useEffect } from "react";
+import { useState } from "react";
+import $ from "jquery";
 
 const Question = () => {
+  let timer = 5;
+  let intervalIds = [];
   useEffect(() => {
     const startButton = document.getElementById("start_btn");
     const nextButton = document.getElementById("next_btn");
@@ -11,7 +15,7 @@ const Question = () => {
       document.getElementById("question_container");
     const questionElement = document.getElementById("question");
     const answerButtonsElement = document.getElementById("answer_buttons");
-    let counter;
+    let score;
 
     let shuffleQuestions, currentQuestionIndex;
 
@@ -21,9 +25,46 @@ const Question = () => {
       setNextQuestion();
     });
 
+    //TIMER
+    //------------------------------------------------------------------------
+    function normalTimer() {
+      clearIntervals();
+      timer = 5;
+      $(".timer").text(5);
+
+      intervalIds.push(
+        setInterval(() => {
+          timer--;
+          $(".timer").text(timer);
+
+          if (timer < 0) {
+            $(".timer").text(" ");
+            clearIntervals();
+            if (shuffleQuestions.length > currentQuestionIndex + 1) {
+              nextButton.classList.remove("hide");
+            } else {
+              endScreen();
+            }
+            Array.from(answerButtonsElement.children).forEach((button) => {
+              setStatusClass(button, button.dataset.correct);
+              button.classList.add("no-click");
+            });
+          }
+        }, 1000)
+      );
+    }
+
+    function clearIntervals() {
+      for (var i = 0; i < intervalIds.length; i++) {
+        clearInterval(intervalIds[i]);
+      }
+    }
+    //----------------------------------------------------------------------------------------
+
     function startGame() {
       console.log("Started");
-      counter = 0;
+      score = 0;
+      $(".quiz_score").text("Current score: " + score);
       questionElement.classList.remove("hide");
       answerButtonsElement.classList.remove("hide");
       startButton.classList.add("hide");
@@ -39,11 +80,13 @@ const Question = () => {
     }
 
     function showQuestion(question) {
+      normalTimer();
+      console.log("intervalIDS: " + intervalIds.length);
       questionElement.innerText = question.question;
       question.answers.forEach((answer) => {
         const button = document.createElement("button");
         button.innerText = answer.text;
-        button.classList.add("btn");
+        button.classList.add("question_btn");
         if (answer.correct) {
           button.dataset.correct = answer.correct;
         }
@@ -65,30 +108,37 @@ const Question = () => {
     }
 
     function selectAnswer(e) {
+      clearIntervals();
+      $(".timer").text(" ");
+      console.log(timer);
       const selectedButton = e.target;
       const correct = selectedButton.dataset.correct;
+      selectedButton.classList.add("focus");
       setStatusClass(document.body, correct);
       Array.from(answerButtonsElement.children).forEach((button) => {
         setStatusClass(button, button.dataset.correct);
       });
       if (correct) {
-        counter++;
+        calculateScore();
       }
       if (shuffleQuestions.length > currentQuestionIndex + 1) {
         nextButton.classList.remove("hide");
       } else {
-        startButton.innerText = "Restart";
-        startButton.classList.remove("hide");
-        // questionElement.classList.add("hide");
-        // answerButtonsElement.classList.add("hide");
-        const printScore = document.getElementById("question");
-        printScore.classList.add("result_screen");
-        printScore.innerText =
-          "YOU HAVE GOTTEN " +
-          counter +
-          " CORRECT ANSWERS\n" +
-          "Hit 'Restart' for a better score!";
+        endScreen();
       }
+    }
+
+    function endScreen() {
+      startButton.innerText = "Restart";
+      startButton.classList.remove("hide");
+      $(".quiz_score").text("");
+      const printScore = document.getElementById("question");
+      printScore.classList.add("result_screen");
+      printScore.innerText =
+        "YOU HAVE GOTTEN " +
+        score +
+        " POINTS\n" +
+        "Hit 'Restart' for a better score!";
     }
 
     function setStatusClass(element, correct) {
@@ -103,6 +153,11 @@ const Question = () => {
     function clearStatusClass(element) {
       element.classList.remove("correct");
       element.classList.remove("wrong");
+    }
+
+    function calculateScore() {
+      score = score + timer * 100;
+      $(".quiz_score").text("Current score: " + score);
     }
 
     const questions = [
@@ -141,7 +196,7 @@ const Question = () => {
           { text: "Sixth from the sun", correct: true },
           { text: "Fifth from the sun", correct: false },
           { text: "Seventh from the sun", correct: false },
-          { text: "Eith from the sun", correct: false },
+          { text: "Eigth from the sun", correct: false },
         ],
       },
       {
@@ -156,10 +211,10 @@ const Question = () => {
       {
         question: "How many planets have rings?",
         answers: [
-          { text: "4", correct: true },
-          { text: "3", correct: false },
-          { text: "2", correct: false },
-          { text: "8", correct: false },
+          { text: 7, correct: false },
+          { text: 4, correct: true },
+          { text: 5, correct: false },
+          { text: 6, correct: false },
         ],
       },
     ];
@@ -168,30 +223,29 @@ const Question = () => {
   return (
     <main>
       <div className="question_body">
+        <div className="timer"></div>
         <div className="question-page_container">
           <div id="question_container" className="hide">
             <div id="question">Question</div>
             <div id="answer_buttons" className="btn-grid">
-              <button className="btn">Answer1</button>
-              <button className="btn">Answer2</button>
-              <button className="btn">Answer3</button>
-              <button className="btn">Answer4</button>
+              <button className="question_btn">Answer1</button>
+              <button className="question_btn">Answer2</button>
+              <button className="question_btn">Answer3</button>
+              <button className="question_btn">Answer4</button>
             </div>
           </div>
           <div className="controls">
-            <button id="start_btn" className="start_button btn">
+            <button id="start_btn" className="start_button question_btn">
               Start
             </button>
-            <button id="next_btn" className="next_button btn hide">
+            <button id="next_btn" className="next_button question_btn hide">
               Next
             </button>
           </div>
         </div>
+        <div className="quiz_score"></div>
       </div>
     </main>
   );
 };
-
-// document.addEventListener("DOMContentLoaded", () => {});
-
 export default Question;
