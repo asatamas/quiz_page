@@ -1,4 +1,12 @@
-.QPageHeaderContainer {
+:root {
+  --clr-primary: #00b4d8;
+  --clr-primary-light-1: #90e0ef;
+  --clr-primary-light-2: #caf0f8;
+  --clr-primary-dark-1: #0077b6;
+  --clr-primary-dark-2: #03045e;
+}
+
+.Head-cont {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -6,50 +14,72 @@
   margin: 2vw auto;
 }
 
-.QPageQuizzesContainer {
-  box-sizing: content-box;
+.Quizzes-grid {
   display: grid;
-  grid-gap: 2vw;
-  margin: 1vh 4vw;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 1.5rem;
+  grid-auto-columns: 1fr;
+  padding-block: 2rem;
+  width: min(95%, 150rem);
+  margin-inline: auto;
 }
 
-.QPageQuizContainer {
+@media screen and (max-width: 992px) {
+  .Quizzes-grid {
+    grid-template-columns: repeat(1, 1fr);
+    width: min(65%, 35rem);
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .Quizzes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .Quizzes-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.Quiz-cont {
   background-color: #f2f2f2;
   border-radius: 20px;
   padding: 1vw;
+  size: 20vh;
+  align-items: center;
 
   display: grid;
   grid-gap: 10px;
   grid-template-columns: repeat(2, 1fr);
 }
 
-.QPageQuizContainer:hover {
+.Quiz:hover {
   transition: transform 0.2s ease;
   transform: scale(1.0125);
 }
 
-.QPageQuizInfoContainer {
+.Quiz-info {
   display: block;
 }
 
-.QPageQuizButtonContainer {
+.Quiz-btn {
   justify-content: center;
   align-items: center;
   padding-top: 20px;
 }
 
-.QPageQuizContainer {
-  align-items: center;
-}
-
-.QPageQuizImage {
+.Quiz-img {
+  min-width: 8dvw;
+  min-height: 6dvh;
+  max-width: 12dvw;
+  max-height: 14dvh;
   width: auto;
-  height: 20vh;
+  height: auto;
   opacity: 85%;
 }
 
-.QPageQuizImageBorder {
+.Quiz-img-bord {
   color: #1abc9c;
   border: 6px solid #fff;
   border-radius: 4px;
@@ -58,14 +88,14 @@
   background-color: transparent;
 }
 
-.QPageQuizHeader {
+.Quiz-head {
   font-family: "Roboto", sans-serif;
   font-size: 1.4vw;
   font-weight: 800;
   text-align: center;
 }
 
-.QPageQuizText {
+.Quiz-text {
   margin: 20px auto;
   font-family: "Sono", sans-serif;
   align-items: center;
@@ -75,7 +105,7 @@
   color: #5c5b5a;
 }
 
-.QPageLinkFont {
+.QPageFont {
   font-family: initial;
   font-size: medium;
   font-weight: normal;

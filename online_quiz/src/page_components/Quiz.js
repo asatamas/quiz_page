@@ -1,37 +1,34 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "../css/QuizPage.css";
-import "../css/HomePage.css";
 import defaultImg from "../assets/default.jpg";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 const Quiz = ({ quiz, questions }) => {
   return (
     <>
-      <Link to="/Question" className="QPageLinkFont">
-        <div className="QPageQuizContainer">
-          <div className="QPageQuizInfoContainer">
-            <div>
-              <p className="QPageQuizHeader">{quiz.name}</p>
-            </div>
-            <div>
-              <p className="QPageQuizText">{quiz.description}</p>
-            </div>
-          </div>
-          <div className="QPageQuizContainer">
-            <img
-              className="QPageQuizImage QPageQuizImageBorder"
-              src={quiz.image_url ? quiz.image_url : defaultImg}
-            />
+      <div className="Quiz-cont">
+        <div className="Quiz-info">
+          <div>
+            <p className="Quiz-head">{quiz.name}</p>
           </div>
           <div>
-            <p className="QPageQuizHeader">{quiz.category}</p>
-          </div>
-          <div>
-            <p className="QPageQuizHeader">Questions : {questions.length} </p>
-            {/* answers array can be accesed via questions.answers */}
+            <p className="Quiz-text">{quiz.description}</p>
           </div>
         </div>
-      </Link>
+        <div className="Quiz-cont">
+          <img
+            className="Quiz-img Quiz-img"
+            src={quiz.image_url ? quiz.image_url : defaultImg}
+            alt="This was supposed to be something else"
+          />
+        </div>
+        <div>
+          <p className="Quiz-head">{quiz.category}</p>
+        </div>
+        <div>
+          <p className="Quiz-head">Questions : {questions.length} </p>
+          {/* answers array can be accesed via questions.answers */}
+        </div>
+      </div>
     </>
   );
 };

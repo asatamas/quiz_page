@@ -1,14 +1,12 @@
 import { Link, useMatch, useResolvedPath } from "react-router-dom";
 import React from "react";
+import iconImg from "../assets/QH_icon.jpg";
 
 export default function NavBar() {
   return (
     <nav className="nav">
       <Link to="/HomePage" className="online_quiz">
-        <img
-          src="https://cdn.discordapp.com/attachments/1019698765969490052/1089578819704328296/image-removebg-preview.png"
-          alt="QuizHub"
-        />
+        <img src={iconImg} alt="QuizHub" />
       </Link>
 
       <ul>
