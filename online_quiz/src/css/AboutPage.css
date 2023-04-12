@@ -12,7 +12,7 @@ h1 {
 
   background: linear-gradient(#ffffff, #ffffff) 50% 50% / calc(100% - 12px)
       calc(100% - 12px) no-repeat,
-    radial-gradient(circle, transparent 40%, #000000 100%) 70% 50%;
+    radial-gradient(circle, transparent 40%, #90e0ef 100%) 70% 50%;
   border-radius: 5px;
   padding: 22px;
   box-sizing: border-box;

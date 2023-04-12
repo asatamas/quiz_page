@@ -1,13 +1,13 @@
 import React from "react";
-import {Link} from 'react-router-dom';
+import { Link } from "react-router-dom";
 import "../css/QuizPage.css";
 import defaultImg from "../assets/default.jpg";
 
 const Quiz = ({ quiz, questions }) => {
   return (
     <>
-    {console.log(questions)}
-      <Link to="/Question" className="QPageLinkFont">
+      {/* {console.log(quiz)} */}
+      <Link to="/Question" state={{ questions }} className="QPageLinkFont">
         <div className="QPageQuizContainer">
           <div className="QPageQuizInfoContainer">
             <div>

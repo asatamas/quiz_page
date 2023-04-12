@@ -1,13 +1,17 @@
-import React, { createElement, useRef } from "react";
+import React from "react";
+import { useLocation } from "react-router-dom";
 import "../css/Question.css";
 import "bootstrap/dist/css/bootstrap.css";
-import { useEffect } from "react";
-import { useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import $ from "jquery";
 
-const Question = () => {
+export default function Question() {
   let timer = 5;
   let intervalIds = [];
+
+  const location = useLocation();
+  const data = location.state;
+
   useEffect(() => {
     const startButton = document.getElementById("start_btn");
     const nextButton = document.getElementById("next_btn");
@@ -29,8 +33,8 @@ const Question = () => {
     //------------------------------------------------------------------------
     function normalTimer() {
       clearIntervals();
-      timer = 5;
-      $(".timer").text(5);
+      timer = 10;
+      $(".timer").text(10);
 
       intervalIds.push(
         setInterval(() => {
@@ -64,11 +68,12 @@ const Question = () => {
     function startGame() {
       console.log("Started");
       score = 0;
+      document.getElementById("question_count").classList.remove("hide");
       $(".quiz_score").text("Current score: " + score);
       questionElement.classList.remove("hide");
       answerButtonsElement.classList.remove("hide");
       startButton.classList.add("hide");
-      shuffleQuestions = questions
+      shuffleQuestions = data.questions
         .sort(() => Math.random() - 0.5)
         .map((e) => {
           e.answers.sort(() => Math.random() - 0.5);
@@ -81,13 +86,12 @@ const Question = () => {
 
     function showQuestion(question) {
       normalTimer();
-      console.log("intervalIDS: " + intervalIds.length);
-      questionElement.innerText = question.question;
+      questionElement.innerText = question.name;
       question.answers.forEach((answer) => {
         const button = document.createElement("button");
-        button.innerText = answer.text;
+        button.innerText = answer.name;
         button.classList.add("question_btn");
-        if (answer.correct) {
+        if (answer.isCorrect === "1") {
           button.dataset.correct = answer.correct;
         }
         button.addEventListener("click", selectAnswer);
@@ -110,7 +114,6 @@ const Question = () => {
     function selectAnswer(e) {
       clearIntervals();
       $(".timer").text(" ");
-      console.log(timer);
       const selectedButton = e.target;
       const correct = selectedButton.dataset.correct;
       selectedButton.classList.add("focus");
@@ -130,6 +133,7 @@ const Question = () => {
     }
 
     function endScreen() {
+      document.getElementById("question_count").classList.add("hide");
       startButton.innerText = "Restart";
       startButton.classList.remove("hide");
       $(".quiz_score").text("");
@@ -160,73 +164,30 @@ const Question = () => {
       score = score + timer * 100;
       $(".quiz_score").text("Current score: " + score);
     }
-
-    const questions = [
-      {
-        question: "What is the largest planet in our solar system?",
-        answers: [
-          { text: "Mars", correct: false },
-          { text: "Jupiter", correct: true },
-          { text: "Earth", correct: false },
-          { text: "Saturn", correct: false },
-        ],
-      },
-      {
-        question: "How many planets are there in our solar system?",
-        answers: [
-          { text: 7, correct: false },
-          { text: 8, correct: true },
-          { text: 9, correct: false },
-          { text: 6, correct: false },
-        ],
-      },
-      {
-        question:
-          "How long does it take for light from the Sun to reach Earth?",
-        answers: [
-          { text: "8 minutes", correct: true },
-          { text: "1 minute", correct: false },
-          { text: "8 seconds", correct: false },
-          { text: "10 hours", correct: false },
-        ],
-      },
-      {
-        question:
-          "In order from the sun, where does Saturn sit in the order of the planets? ",
-        answers: [
-          { text: "Sixth from the sun", correct: true },
-          { text: "Fifth from the sun", correct: false },
-          { text: "Seventh from the sun", correct: false },
-          { text: "Eigth from the sun", correct: false },
-        ],
-      },
-      {
-        question: "Which planet is the smallest?",
-        answers: [
-          { text: "Mercury", correct: true },
-          { text: "Venus", correct: false },
-          { text: "Uranus", correct: false },
-          { text: "Mars", correct: false },
-        ],
-      },
-      {
-        question: "How many planets have rings?",
-        answers: [
-          { text: 7, correct: false },
-          { text: 4, correct: true },
-          { text: 5, correct: false },
-          { text: 6, correct: false },
-        ],
-      },
-    ];
   }, []);
+
+  const [questionIndex, setIndex] = useState(0);
+
+  function handleClick() {
+    console.log(questionIndex);
+    if (questionIndex === data.questions.length) {
+      setIndex(questionIndex - (data.questions.length - 1));
+    } else {
+      setIndex(questionIndex + 1);
+    }
+  }
 
   return (
     <main>
       <div className="question_body">
+        <h1> </h1>
         <div className="timer"></div>
         <div className="question-page_container">
           <div id="question_container" className="hide">
+            <p1 id="question_count">
+              {" "}
+              Question {questionIndex} of {data.questions.length}
+            </p1>
             <div id="question">Question</div>
             <div id="answer_buttons" className="btn-grid">
               <button className="question_btn">Answer1</button>
@@ -236,10 +197,18 @@ const Question = () => {
             </div>
           </div>
           <div className="controls">
-            <button id="start_btn" className="start_button question_btn">
+            <button
+              id="start_btn"
+              className="start_button question_btn"
+              onClick={handleClick}
+            >
               Start
             </button>
-            <button id="next_btn" className="next_button question_btn hide">
+            <button
+              id="next_btn"
+              className="next_button question_btn hide"
+              onClick={handleClick}
+            >
               Next
             </button>
           </div>
@@ -248,5 +217,5 @@ const Question = () => {
       </div>
     </main>
   );
-};
-export default Question;
+}
+//export default Question;
