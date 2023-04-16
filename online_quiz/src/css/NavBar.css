@@ -18,32 +18,31 @@ html {
   --clr-primary-dark-2: #03045e;
 }
 
-.nav {
+.primary-header {
   background-color: var(--clr-primary-light-2);
   color: var(--clr-primary);
-  display: flex;
-  justify-content: space-between;
-  align-items: stretch;
-  gap: 2rem;
-  padding: 0 1rem;
-  text-align: right;
-}
-
-.online_quiz img {
-  width: 100%;
-  height: 65px;
-}
-
-.nav ul {
-  padding: 22px 0;
   margin: 0;
+}
+
+.container {
+  --max-width: 1110px;
+  --padding: 1rem;
+  width: min(var(--max-width), 100% - (var(--padding) * 2));
+}
+
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.nav-primary ul {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
 }
 
-.nav a {
+.nav-primary a {
   position: relative;
   display: inline-block;
   padding: 4px 0;
@@ -55,7 +54,7 @@ html {
   font-weight: bold;
 }
 
-.nav a::after {
+.nav-primary a::after {
   position: absolute;
   content: "";
   top: 100%;
@@ -68,11 +67,51 @@ html {
   transition: transform 0.5s;
 }
 
-.nav a:hover {
+.nav-primary a:hover {
   color: var(--clr-primary-dark-2);
 }
 
-.nav a:hover::after {
+.nav-primary a:hover::after {
   transform: scaleX(1);
   transform-origin: left;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.mobile-nav-toggle,
+.light-dark-mode-toggle {
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  padding: 0.5em;
+}
+
+.mobile-nav-toggle .icon-close {
+  display: none;
+}
+
+.light-dark-mode-toggle .icon-moon {
+  display: none;
+}
+
+.icon-close,
+.icon-hamburger,
+.icon-sun,
+.icon-moon {
+  height: 2rem;
+  width: 2rem;
+}
+
+.icon-QuizHub {
+  height: 3rem;
 }

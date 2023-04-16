@@ -52,10 +52,8 @@ const QuizPage = () => {
     fetchData();
   }, []);
 
-  if(loading) {
-    return (
-      <Loading/>
-    );
+  if (loading) {
+    return <Loading />;
   }
 
   return (
@@ -83,7 +81,9 @@ const QuizPage = () => {
                     answers: questionAnswers,
                   };
                 });
-              return <Quiz quiz={quiz} questions={quizQuestions} />;
+              return (
+                <Quiz key={quiz.id} quiz={quiz} questions={quizQuestions} />
+              );
             })}
           </div>
         </>

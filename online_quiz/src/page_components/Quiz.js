@@ -3,36 +3,33 @@ import { Link } from "react-router-dom";
 import "../css/QuizPage.css";
 import defaultImg from "../assets/default.jpg";
 
-const Quiz = ({ quiz, questions }) => {
+const Quiz = ({ key, quiz, questions }) => {
   return (
     <>
-      {/* {console.log(quiz)} */}
-      <Link to="/Question" state={{ questions }} className="QPageLinkFont">
-        <div className="QPageQuizContainer">
-          <div className="QPageQuizInfoContainer">
-            <div>
-              <p className="QPageQuizHeader">{quiz.name}</p>
-            </div>
-            <div>
-              <p className="QPageQuizText">{quiz.description}</p>
-            </div>
+      <div>
+        <div>
+          <div>
+            <p>{quiz.name}</p>
+          </div>
+          <div>
+            <p>{quiz.description}</p>
           </div>
         </div>
-        <div className="Quiz-cont">
-          <img
-            className="Quiz-img Quiz-img"
-            src={quiz.image_url ? quiz.image_url : defaultImg}
-            alt="This was supposed to be something else"
-          />
-        </div>
-        <div>
-          <p className="Quiz-head">{quiz.category}</p>
-        </div>
-        <div>
-          <p className="Quiz-head">Questions : {questions.length} </p>
-          {/* answers array can be accesed via questions.answers */}
-        </div>
-      </Link>
+      </div>
+      <div>
+        <img
+          className="Quiz-img"
+          src={quiz.image_url ? quiz.image_url : defaultImg}
+          alt="This was supposed to be something else"
+        />
+      </div>
+      <div>
+        <p>{quiz.category}</p>
+        <Link to="/Question" state={{ questions }}>
+          <button className="button">Solve</button>
+        </Link>
+        <p>Questions : {questions.length} </p>
+      </div>
     </>
   );
 };
