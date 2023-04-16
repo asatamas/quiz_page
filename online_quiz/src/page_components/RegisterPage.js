@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Container, Form, Button } from "react-bootstrap";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import "../css/RegisterPage.css";
 
 export default function RegisterPage() {
   const [name, setName] = useState("");
