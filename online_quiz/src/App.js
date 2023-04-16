@@ -8,6 +8,7 @@ import NavBar from "./page_components/NavBar";
 import Question from "./page_components/Question";
 import CreateQuiz from "./page_components/CreateQuiz";
 import LogInPage from "./page_components/LogInPage";
+import RegisterPage from "./page_components/RegisterPage";
 import { Route, Routes } from "react-router-dom";
 
 const App = () => {
@@ -21,8 +22,9 @@ const App = () => {
         <Route path="/HowToPage" element={<HowToPage />} />
         <Route path="/QuizPage" element={<QuizPage />} />
         <Route path="/Question" element={<Question />} />
-        <Route path="/CreateQuiz" element={<CreateQuiz/>} />
+        <Route path="/CreateQuiz" element={<CreateQuiz />} />
         <Route path="/LogInPage" element={<LogInPage />} />
+        <Route path="/RegisterPage" element={<RegisterPage />} />
         <Route path="*" element={<NoPage />} />
       </Routes>
 

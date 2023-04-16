@@ -44,9 +44,9 @@ export default function LoginPage() {
             Login
           </Button>
 
-          <Button variant="secondary" type="button" className="login-button">
+          <a href="/RegisterPage" className="login-button">
             Register
-          </Button>
+          </a>
         </Form>
       </div>
       <div className="contact-container">
