@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { Container, Form, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "../css/LogInPage.css";
+import "../css/NavBar.css";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
@@ -16,21 +18,26 @@ export default function LoginPage() {
 
   return (
     <>
-      <h1>Login to QuizHub</h1>
-      <div className="container1">
+      <header className="primary-header">
+        <div className="container">
+          <h className="fs-primary-heading fw-semi-bold">Login to QuizHub</h>
+        </div>
+      </header>
+
+      <div className="container">
         <Form className="login-form" onSubmit={handleSubmit}>
           <Form.Group controlId="formBasicEmail">
-            <Form.Label className="login-label">Email address</Form.Label>
+            <Form.Label className="fs-650">Email address</Form.Label>
             <Form.Control
               className="login-input"
-              type="email"
+              type="text"
               placeholder="Enter email"
               value={email}
               onChange={(event) => setEmail(event.target.value)}
             />
           </Form.Group>
           <Form.Group controlId="formBasicPassword">
-            <Form.Label>Password</Form.Label>
+            <Form.Label className="fs-650">Password</Form.Label>
             <Form.Control
               className="login-input"
               type="password"
@@ -39,22 +46,27 @@ export default function LoginPage() {
               onChange={(event) => setPassword(event.target.value)}
             />
           </Form.Group>
+          <div className="even-column">
+            <Link to="/HomePage">
+              <Button variant="primary" type="submit" className="login-button">
+                Login
+              </Button>
+            </Link>
 
-          <Button variant="primary" type="submit" className="login-button">
-            Login
-          </Button>
-
-          <a href="/RegisterPage" className="login-button">
-            Register
-          </a>
+            <Link to="/RegisterPage">
+              <Button variant="primary" type="submit" className="login-button">
+                Register
+              </Button>
+            </Link>
+          </div>
         </Form>
       </div>
-      <div className="contact-container">
+      <div className="container">
         <Container>
           <Row>
             <Col>
-              <h2>Contact Us</h2>
-              <p>
+              <h className="fs-650 fw-semi-bold">Contact Us</h>
+              <p className="fs-500">
                 We hope you enjoy using QuizHub as much as we enjoyed creating
                 it. If you have any questions or feedback, please don't hesitate
                 to contact us. You can reach us through the contact form on our

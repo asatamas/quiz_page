@@ -105,21 +105,7 @@
   color: #5c5b5a;
 }
 
-.QPageFont {
-  font-family: initial;
-  font-size: medium;
-  font-weight: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  text-transform: none;
-  text-decoration: none;
-  text-align: left;
-  color: inherit;
-  background-color: transparent;
-}
-
-.button {
+.quiz-button {
   cursor: pointer;
   text-decoration: none;
   border: 0;
@@ -128,9 +114,10 @@
   line-height: 1;
   background-color: var(--clr-primary-light-1);
   transition: 250ms;
+  color: inherit;
 }
 
-.button:hover,
-.button:focus-visible {
+.quiz-button:hover,
+.quiz-button:focus-visible {
   background-color: var(--clr-primary-light-2);
 }

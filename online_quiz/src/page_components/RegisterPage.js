@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Container, Form, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "../css/RegisterPage.css";
@@ -31,13 +32,20 @@ export default function RegisterPage() {
 
   return (
     <>
-      <h1>Register for QuizHub</h1>
-      <div className="container1">
-        <Form className="register-form" onSubmit={handleSubmit}>
+      <header className="primary-header">
+        <div className="container">
+          <h className="fs-primary-heading fw-semi-bold">
+            Register for QuizHub
+          </h>
+        </div>
+      </header>
+
+      <div className="container">
+        <Form className="login-form" onSubmit={handleSubmit}>
           <Form.Group controlId="formBasicName">
-            <Form.Label>Name</Form.Label>
+            <Form.Label className="fs-500">Name</Form.Label>
             <Form.Control
-              className="register-input"
+              className="login-input"
               type="text"
               placeholder="Enter name"
               value={name}
@@ -45,19 +53,19 @@ export default function RegisterPage() {
             />
           </Form.Group>
           <Form.Group controlId="formBasicEmail">
-            <Form.Label>Email address</Form.Label>
+            <Form.Label className="fs-500">Email address</Form.Label>
             <Form.Control
-              className="register-input"
-              type="email"
+              className="login-input"
+              type="text"
               placeholder="Enter email"
               value={email}
               onChange={(event) => setEmail(event.target.value)}
             />
           </Form.Group>
           <Form.Group controlId="formBasicPassword">
-            <Form.Label>Password</Form.Label>
+            <Form.Label className="fs-500">Password</Form.Label>
             <Form.Control
-              className="register-input"
+              className="login-input"
               type="password"
               placeholder="Password"
               value={password}
@@ -68,9 +76,9 @@ export default function RegisterPage() {
             />
           </Form.Group>
           <Form.Group controlId="formBasicConfirmPassword">
-            <Form.Label>Confirm Password</Form.Label>
+            <Form.Label className="fs-500">Confirm Password</Form.Label>
             <Form.Control
-              className="register-input"
+              className="login-input"
               type="password"
               placeholder="Confirm Password"
               value={confirmPassword}
@@ -82,25 +90,36 @@ export default function RegisterPage() {
               </Form.Text>
             )}
           </Form.Group>
-          <Button
-            variant="primary"
-            type="submit"
-            className="register-button"
-            disabled={passwordMatchError}
-          >
-            Register
-          </Button>
-          <Button variant="secondary" type="button" className="register-button">
-            Login
-          </Button>
+          <div className="even-column">
+            <Link to="/NoPage">
+              <Button
+                variant="primary"
+                type="submit"
+                className="login-button"
+                disabled={passwordMatchError}
+              >
+                Register
+              </Button>
+            </Link>
+
+            <Link to="/LogInPage">
+              <Button
+                variant="secondary"
+                type="button"
+                className="login-button"
+              >
+                Login
+              </Button>
+            </Link>
+          </div>
         </Form>
       </div>
-      <div className="contact-container">
+      <div className="container">
         <Container>
           <Row>
             <Col>
-              <h2>Contact Us</h2>
-              <p>
+              <h className="fs-650 fw-semibold">Contact Us</h>
+              <p className="fs-500">
                 We hope you enjoy using QuizHub as much as we enjoyed creating
                 it. If you have any questions or feedback, please don't hesitate
                 to contact us. You can reach us through the contact form on our

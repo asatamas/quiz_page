@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../css/QuizPage.css";
+import "../css/NavBar.css";
 import Quiz from "./Quiz";
 import Loading from "./Loading";
 
@@ -60,13 +61,21 @@ const QuizPage = () => {
     <>
       {quizzes.length > 0 ? (
         <>
-          <div className="Head-cont">
-            <h1>Quizzes quizzes quizzes!!!</h1>
-            <p1>Play as many as you'd like!</p1>
-            <p1>Total quizzes: {quizzes.length}</p1>
-          </div>
+          <header className="primary-header">
+            <div className="container">
+              <h className="fs-primary-heading fw-semi-bold">
+                Quizzes quizzes quizzes!!!
+              </h>
+              <p className="fs-secondary-heading">
+                Play as many as you'd like!
+              </p>
+              <p className="fs-secondary-heading">
+                Total quizzes: {quizzes.length}
+              </p>
+            </div>
+          </header>
 
-          <div className="Quizzes-grid">
+          <div className="container">
             {/*comment for line spacing, for readability*/}
 
             {quizzes.map((quiz) => {
@@ -88,9 +97,13 @@ const QuizPage = () => {
           </div>
         </>
       ) : (
-        <div className="Head-cont">
-          <h1>No Quizzes to show! :(</h1>
-        </div>
+        <header className="primary-header">
+          <div className="container">
+            <h className="fs-primary-heading fw-semi-bold">
+              No Quizzes to show! :(
+            </h>
+          </div>
+        </header>
       )}
     </>
   );

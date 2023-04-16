@@ -8,13 +8,13 @@ import MoonImg from "../assets/moon.png";
 
 export default function NavBar() {
   return (
-    <header className="primary-header">
+    <header className="primary-header bg-neutral-900">
       <div className="container">
         <div className="nav-wrapper">
           <CustomLink to="/HomePage">
             <img src={iconImg} alt="QuizHub" className="icon-QuizHub" />
           </CustomLink>
-          <button className="mobile-nav-toggle">
+          <button onClick={expandMobileNav} className="mobile-nav-toggle">
             <img
               src={hamburgerImg}
               alt=""
@@ -29,8 +29,8 @@ export default function NavBar() {
             />
             <span className="visually-hidden">Menu</span>
           </button>
-          <nav>
-            <ul>
+          <nav className="primary-navigation" id="primary-navigation">
+            <ul role="list" className="nav-list">
               <CustomLink to="/HomePage">Home</CustomLink>
               <CustomLink to="/AboutPage">About Us</CustomLink>
               <CustomLink to="/HowToPage">How To</CustomLink>
@@ -42,7 +42,7 @@ export default function NavBar() {
             [QuizHub   Home  About Us  How To  Quizzes                            Log In  Sign Up]
             */}
           </nav>
-          <button className="light-dark-mode-toggle">
+          <button onClick={toggleDarkMode} className="theme-toggle-button">
             <img src={sunImg} alt="" className="icon-sun" aria-hidden="true" />
             <img
               src={MoonImg}
@@ -68,4 +68,16 @@ function CustomLink({ to, children, ...props }) {
       </Link>
     </la>
   );
+}
+
+function expandMobileNav() {
+  document.querySelector(".primary-navigation").toggleAttribute("data-visible");
+  document.querySelector(".icon-hamburger").toggleAttribute("data-visible");
+  document.querySelector(".icon-close").toggleAttribute("data-visible");
+}
+
+function toggleDarkMode() {
+  document.body.classList.toggle("dark");
+  document.querySelector(".icon-sun").toggleAttribute("dark-mode");
+  document.querySelector(".icon-moon").toggleAttribute("dark-mode");
 }
