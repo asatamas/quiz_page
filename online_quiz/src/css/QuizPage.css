@@ -2,6 +2,16 @@
   margin: 0;
 }
 
+.quiz-hdr-cnt {
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  flex-direction: column;
+  margin-top:15px;
+  gap:30px;
+  width:100%;
+}
+
 .Head-cont {
   display: flex;
   flex-direction: column;
@@ -9,6 +19,7 @@
   text-align: center;
   margin: 2vw auto;
 }
+
 
 .Quizzes-grid {
   display: grid;

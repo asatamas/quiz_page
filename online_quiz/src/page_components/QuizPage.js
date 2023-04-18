@@ -61,15 +61,13 @@ const QuizPage = () => {
     <>
       {quizzes.length > 0 ? (
         <>
-          <header className="primary-header padding-block-400">
-            <div className="container">
+            <div className="quiz-hdr-cnt">
               <h className="fs-primary-heading fw-semi-bold">
                 Quizzes quizzes quizzes!!!
               </h>
               <p className="fs-650">Play as many as you'd like!</p>
               <p className="fs-650">Total quizzes: {quizzes.length}</p>
             </div>
-          </header>
 
           <div className="container Quizzes-grid">
             {/*comment for line spacing, for readability*/}
