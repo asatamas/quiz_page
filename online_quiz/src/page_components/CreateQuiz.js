@@ -449,12 +449,11 @@ const CreateQuiz = () => {
   };
 
   return (
-    <div className="container">
+    <div className="main-container">
       <header  className="primary-header padding-block-700">
         <h className="fs-primary-heading fw-semi-bold">Create Quiz</h>
-        {errorMsg && <h className="error-msg-hdr">{errorMsg}</h>}
       </header>
-
+      {errorMsg && <h className="error-msg-hdr">{errorMsg}</h>}
       <form onSubmit={handleSubmit}>
         <QuizInput
           header="Quiz name:"

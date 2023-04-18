@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&family=Sono:wght@300&display=swap");
 
-.main_container {
+.main-container {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -67,6 +67,7 @@
 .error-msg-hdr {
   color: red;
   font-family: "Roboto", sans-serif;
+  align-self:center;
   font-size: 2em;
 }
 
