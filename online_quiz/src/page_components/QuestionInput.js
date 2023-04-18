@@ -24,7 +24,7 @@ const QuestionInput = ({
       <input
         id={`question-${questionIndex}`}
         name={`question-${questionIndex}`}
-        className="form-control"
+        className="form-control txt-input"
         type="text"
         value={question.text}
         onChange={(event) => handleQuestionChange(event, questionIndex)}
@@ -64,7 +64,7 @@ const QuestionInput = ({
             }:`}</label>
             <input
               id={`answer-${questionIndex}-${answerIndex}`}
-              className="form-control answer-input"
+              className="form-control answ-input"
               type="text"
               value={answer.text}
               onChange={(e) =>
@@ -91,6 +91,7 @@ const QuestionInput = ({
             <label className="label_text answer_text">Is correct:</label>
             <input
               id={`correct-answer-${questionIndex}-${answerIndex}`}
+              className="chckbx-input"
               type="checkbox"
               onChange={(e) =>
                 updateCorrectAnswer(e, questionIndex, answerIndex)
