@@ -16,7 +16,7 @@ const QuizInput = ({
       <label className="label_text">{header}</label>
       <input
         id={name}
-        className="form-control"
+        className="form-control txt-input"
         type="text"
         name={name}
         value={value}

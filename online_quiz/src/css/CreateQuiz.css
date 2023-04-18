@@ -8,7 +8,7 @@
     margin: auto;
 }
 
-header {
+.hdr-txt {
     display:flex;
     gap:30px;
     flex-direction:column;
@@ -17,7 +17,7 @@ header {
 }
 
 
-input[type="text"] {
+.txt-input {
     width:100%;
     border: 1px solid #474747;
     border-radius: 5px;
@@ -30,35 +30,13 @@ input[type="text"] {
     color: #333;
 }
 
-input[type="text"]:focus {
+.txt-input:focus {
     border: 2px solid blue;
     border-color: blue;
     box-shadow: 0px 0px 5px 0px blue;
     outline: none;
     /* Add an outline of none to remove the default outline when an input is focused */
 }
-
-input[type="password"] {
-    width:100%;
-    border: 1px solid #474747;
-    border-radius: 5px;
-    padding: 10px;
-    background-color: #f2f2f2;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 10px;
-    font-family: "Roboto", sans-serif;
-    font-size: 20px;
-    color: #333;
-}
-
-input[type="password"]:focus {
-    border: 2px solid blue;
-    border-color: blue;
-    box-shadow: 0px 0px 5px 0px blue;
-    outline: none;
-    /* Add an outline of none to remove the default outline when an input is focused */
-}
-
 
 .label_text {
     font-family: "Sono", sans-serif;
@@ -131,13 +109,22 @@ input[type="password"]:focus {
     gap:10%;
 }
 
-input.answer-input[type="text"] {
+.answ-input {
     width:100%;
     justify-self: flex-start;
+    border: 1px solid #474747;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #f2f2f2;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    color: #333;
 }
 
 /* Hide default checkbox */
-input[type="checkbox"] {
+.chckbx-input {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -155,7 +142,7 @@ input[type="checkbox"] {
   }
   
   /* Checked state */
-  input[type="checkbox"]:checked::before {
+  .chckbx-input:checked::before {
     content: "✔";
     position: absolute;
     left: 50%;
@@ -165,13 +152,13 @@ input[type="checkbox"] {
     color: #fff;
   }
   
-  input[type="checkbox"]:checked {
+  .chckbx-input:checked {
     background-color: #6fa9d6;
     border-color: #6fa9d6;
   }
   
   /* Hover state */
-  input[type="checkbox"]:hover:not(:checked) {
+  .chckbx-input:hover:not(:checked) {
     border-color: #a1a1a1;
 }
 
