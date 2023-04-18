@@ -4,7 +4,7 @@
 #home-hdr {
   font-family: "Roboto", sans-serif;
   text-align: center;
-  font-size: 4vw;
+  font-size: 3rem;
   letter-spacing: 5px;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
   -webkit-text-stroke: 1px #aaa;
@@ -19,7 +19,7 @@ header {
 
 .home-p {
   font-family: "Roboto", sans-serif;
-  font-size: 1.6vw;
+  font-size: 1.4rem;
   letter-spacing: 1px;
   margin-top: 5px;
   font-weight: 800;
@@ -31,7 +31,7 @@ header {
   font-family: "Sono", sans-serif;
   margin-top: 20px;
   text-align: center;
-  font-size: 1.2vw;
+  font-size: 1rem;
   letter-spacing: 1px;
   font-weight: 600;
   line-height: 2em;
@@ -42,7 +42,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 80vh;
+  height: 45rem;
   margin: 0;
 }
 

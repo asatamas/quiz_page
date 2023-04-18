@@ -61,21 +61,17 @@ const QuizPage = () => {
     <>
       {quizzes.length > 0 ? (
         <>
-          <header className="primary-header">
+          <header className="primary-header padding-block-400">
             <div className="container">
               <h className="fs-primary-heading fw-semi-bold">
                 Quizzes quizzes quizzes!!!
               </h>
-              <p className="fs-secondary-heading">
-                Play as many as you'd like!
-              </p>
-              <p className="fs-secondary-heading">
-                Total quizzes: {quizzes.length}
-              </p>
+              <p className="fs-650">Play as many as you'd like!</p>
+              <p className="fs-650">Total quizzes: {quizzes.length}</p>
             </div>
           </header>
 
-          <div className="container">
+          <div className="container Quizzes-grid">
             {/*comment for line spacing, for readability*/}
 
             {quizzes.map((quiz) => {

@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { Container, Form, Button } from "react-bootstrap";
+import { Container, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+import "../css/NavBar.css";
 import "../css/RegisterPage.css";
 
 export default function RegisterPage() {
@@ -32,7 +31,7 @@ export default function RegisterPage() {
 
   return (
     <>
-      <header className="primary-header">
+      <header className="primary-header padding-block-500">
         <div className="container">
           <h className="fs-primary-heading fw-semi-bold">
             Register for QuizHub
@@ -92,43 +91,37 @@ export default function RegisterPage() {
           </Form.Group>
           <div className="even-column">
             <Link to="/NoPage">
-              <Button
+              <button
                 variant="primary"
                 type="submit"
-                className="login-button"
+                className="rgl-button fw-bold"
                 disabled={passwordMatchError}
               >
                 Register
-              </Button>
+              </button>
             </Link>
 
             <Link to="/LogInPage">
-              <Button
+              <button
                 variant="secondary"
                 type="button"
-                className="login-button"
+                className="rgl-button fw-bold"
               >
                 Login
-              </Button>
+              </button>
             </Link>
           </div>
         </Form>
       </div>
-      <div className="container">
-        <Container>
-          <Row>
-            <Col>
-              <h className="fs-650 fw-semibold">Contact Us</h>
-              <p className="fs-500">
-                We hope you enjoy using QuizHub as much as we enjoyed creating
-                it. If you have any questions or feedback, please don't hesitate
-                to contact us. You can reach us through the contact form on our
-                website or by sending an email to support@quizhub.com.
-              </p>
-            </Col>
-          </Row>
-        </Container>
-      </div>
+      <footer className="padding-block-900 container">
+        <h className="fs-secondary-heading fw-semi-bold">Contact Us</h>
+        <p className="fs-500">
+          We hope you enjoy using QuizHub as much as we enjoyed creating it. If
+          you have any questions or feedback, please don't hesitate to contact
+          us. You can reach us through the contact form on our website or by
+          sending an email to support@quizhub.com.
+        </p>
+      </footer>
     </>
   );
 }

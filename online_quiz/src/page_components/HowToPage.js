@@ -8,9 +8,9 @@ export default function HowToPage() {
   return (
     /**Text and images that explain how to use our quiz platform */
     <>
-      <header className="primary-header">
+      <header className="primary-header padding-block-600">
         <div className="container">
-          <h className="fs-primary-heading fw-semi-bold">How to use QuizHub</h>
+          <h className="fs-primary-heading fw-semi-bold ">How to use QuizHub</h>
           <p className="fs-500">
             Welcome to QuizHub, the fun and engaging quiz platform! We have
             designed our platform to be user-friendly and easy to navigate so
@@ -20,9 +20,9 @@ export default function HowToPage() {
         </div>
       </header>
 
-      <section>
-        <div className="container">
-          <h className="fs-650">Create an account</h>
+      <section className="padding-block-700">
+        <div className="container stuff-go-center">
+          <h className="fs-650 fw-semi-bold ">Create an account</h>
           <p className="fs-500">
             The first step to using QuizHub is to create an account. Simply
             click on the "Sign Up" button on the top right corner of the
@@ -31,9 +31,9 @@ export default function HowToPage() {
           </p>
         </div>
       </section>
-      <section>
-        <div className="container">
-          <h className="fs-650">Browse our quizzes</h>
+      <section className="padding-block-700">
+        <div className="container stuff-go-center">
+          <h className="fs-650 fw-semi-bold ">Browse our quizzes</h>
           <p className="fs-500">
             Once you've signed up and logged in, you'll have access to all our
             quizzes. You can browse by category, search for specific topics or
@@ -42,9 +42,9 @@ export default function HowToPage() {
           </p>
         </div>
       </section>
-      <section>
-        <div className="container">
-          <h className="fs-650">Take a quiz</h>
+      <section className="padding-block-700">
+        <div className="container stuff-go-center">
+          <h className="fs-650 fw-semi-bold ">Take a quiz</h>
           <p className="fs-500">
             Our quizzes are designed to be fun and educational. They consist of
             multiple-choice questions with different levels of difficulty.
@@ -55,9 +55,9 @@ export default function HowToPage() {
           </p>
         </div>
       </section>
-      <section>
-        <div className="container">
-          <h className="fs-650">Earn points and badges</h>
+      <section className="padding-block-700">
+        <div className="container stuff-go-center">
+          <h className="fs-650 fw-semi-bold ">Earn points and badges</h>
           <p className="fs-500">
             As you take more quizzes and score higher, you'll earn points and
             badges. These achievements are a fun way to track your progress and
@@ -66,7 +66,7 @@ export default function HowToPage() {
         </div>
       </section>
 
-      <footer>
+      <footer className="padding-block-400 container">
         <h className="fs-secondary-heading fw-semi-bold">Contact Us</h>
         <p className="fs-500">
           We hope you enjoy using QuizHub as much as we enjoyed creating it. If

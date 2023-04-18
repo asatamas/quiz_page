@@ -1,28 +1,28 @@
 import { Link, useMatch, useResolvedPath } from "react-router-dom";
 import React from "react";
-import iconImg from "../assets/QH_icon.jpg";
-import closeImg from "../assets/close.png";
-import hamburgerImg from "../assets/hamburger-menu.png";
-import sunImg from "../assets/sun.png";
-import MoonImg from "../assets/moon.png";
+import QuizHub_Icon from "../assets/QH_icon.jpg";
+import Close_icon from "../assets/close.png";
+import Hamburger_icon from "../assets/hamburger-menu.png";
+import Sun_icon from "../assets/sun.png";
+import Moon_icon from "../assets/moon.png";
 
 export default function NavBar() {
   return (
-    <header className="primary-header bg-neutral-900">
+    <header id="navigation-header" className="primary-header bg-neutral-900">
       <div className="container">
         <div className="nav-wrapper">
           <CustomLink to="/HomePage">
-            <img src={iconImg} alt="QuizHub" className="icon-QuizHub" />
+            <img src={QuizHub_Icon} alt="QuizHub" className="icon-QuizHub" />
           </CustomLink>
           <button onClick={expandMobileNav} className="mobile-nav-toggle">
             <img
-              src={hamburgerImg}
+              src={Hamburger_icon}
               alt=""
               className="icon-hamburger"
               aria-hidden="true"
             />
             <img
-              src={closeImg}
+              src={Close_icon}
               alt=""
               className="icon-close"
               aria-hidden="true"
@@ -43,9 +43,14 @@ export default function NavBar() {
             */}
           </nav>
           <button onClick={toggleDarkMode} className="theme-toggle-button">
-            <img src={sunImg} alt="" className="icon-sun" aria-hidden="true" />
             <img
-              src={MoonImg}
+              src={Sun_icon}
+              alt=""
+              className="icon-sun"
+              aria-hidden="true"
+            />
+            <img
+              src={Moon_icon}
               alt=""
               className="icon-moon"
               aria-hidden="true"
@@ -74,6 +79,8 @@ function expandMobileNav() {
   document.querySelector(".primary-navigation").toggleAttribute("data-visible");
   document.querySelector(".icon-hamburger").toggleAttribute("data-visible");
   document.querySelector(".icon-close").toggleAttribute("data-visible");
+  document.querySelector(".primary-header").toggleAttribute("data-overlay");
+  document.querySelector(".mobile-nav-toggle").toggleAttribute("data-overlay");
 }
 
 function toggleDarkMode() {

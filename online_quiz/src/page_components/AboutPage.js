@@ -1,9 +1,6 @@
 import React from "react";
 import "../css/AboutPage.css";
 import "../css/NavBar.css";
-import { Container } from "react-bootstrap";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import logo1 from "../assets/aboutPage1.jpg";
 import logo2 from "../assets/aboutPage2.jpg";
 import logo3 from "../assets/aboutPage3.jpg";
@@ -13,11 +10,13 @@ const AboutPage = () => {
   return (
     /**Mostly text that explains our situation and our goals + images */
     <>
-      <header className="primary-header">
-        <h className="fs-primary-heading fw-semi-bold">About us</h>
+      <header className="primary-header padding-block-600">
+        <div className="container">
+          <h className="fs-primary-heading fw-semi-bold">About us</h>
+        </div>
       </header>
 
-      <section>
+      <section className="padding-block-700">
         <div className="container even-column">
           <div>
             <p className="fs-500">
@@ -30,12 +29,12 @@ const AboutPage = () => {
             </p>
           </div>
           <div>
-            <img src={logo1} alt="" />
+            <img className="stuff-go-center img-medium" src={logo1} alt="" />
           </div>
         </div>
       </section>
 
-      <section>
+      <section className="padding-block-700">
         <div className="container even-column">
           <div>
             <p className="fs-500">
@@ -48,12 +47,12 @@ const AboutPage = () => {
             </p>
           </div>
           <div>
-            <img src={logo2} alt="" />
+            <img className="stuff-go-center img-medium" src={logo2} alt="" />
           </div>
         </div>
       </section>
 
-      <section>
+      <section className="padding-block-700">
         <div className="container even-column">
           <div>
             <p className="fs-500">
@@ -66,12 +65,12 @@ const AboutPage = () => {
             </p>
           </div>
           <div>
-            <img src={logo3} alt="" />
+            <img className="stuff-go-center img-medium" src={logo3} alt="" />
           </div>
         </div>
       </section>
 
-      <section>
+      <section className="padding-block-700">
         <div className="container even-column">
           <div>
             <p className="fs-500">
@@ -84,24 +83,27 @@ const AboutPage = () => {
             </p>
           </div>
           <div>
-            <img src={logo4} alt="" />
+            <img className="stuff-go-center img-medium" src={logo4} alt="" />
           </div>
         </div>
       </section>
 
-      <section>
+      <section className="padding-block-700">
         <div className="container even-column">
           <div>
             <img
+              className="stuff-go-center img-small"
               src="https://www.pngkit.com/png/detail/34-347000_black-businessman-png-worth-the-wait.png"
               alt=""
             />
           </div>
           <div>
-            <p className="fs-500">
+            <p className="fs-500 stuff-go-center">
               "We have revolutionized how people think. Bing chilling"
             </p>
-            <p className="fs-400">– Aurimas Gasparas, CEO of QuizHub</p>
+            <p className="fs-400 stuff-go-center">
+              – Aurimas Gasparas, CEO of QuizHub
+            </p>
           </div>
         </div>
       </section>

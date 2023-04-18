@@ -1,6 +1,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import "../css/HomePage.css";
+import "../css/NavBar.css";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 const HomePage = () => {
@@ -9,7 +10,7 @@ const HomePage = () => {
       <div id="home-container">
         <div className="header-container lg">
           <header>
-            <h1 id="home-hdr">Welcome to QuizHub!</h1>
+            <h id="home-hdr">Welcome to QuizHub!</h>
             <p className="home-p">
               Enjoy your time by creating and playing quizzes on whichever
               topics you like!

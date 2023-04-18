@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../css/HomePage.css";
-//import "../css/CreateQuiz.css"
+import "../css/CreateQuiz.css";
 import QuestionInput from "./QuestionInput";
 import QuizInput from "./QuizInput";
 
@@ -261,10 +261,10 @@ const CreateQuiz = () => {
   };
 
   return (
-    <div className="main_container">
-      <header>
-        <h1 id="home-hdr">Create Quiz</h1>
-        {errorMsg && <h2 className="error-msg-hdr">{errorMsg}</h2>}
+    <div className="container">
+      <header className="primary-header padding-block-700">
+        <h className="fs-primary-heading fw-semi-bold">Create Quiz</h>
+        {errorMsg && <h className="error-msg-hdr">{errorMsg}</h>}
       </header>
 
       <form onSubmit={handleSubmit}>
