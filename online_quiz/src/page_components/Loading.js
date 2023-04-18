@@ -1,15 +1,14 @@
 import React from "react";
-import "../css/QuizPage.css";
-import "../css/HomePage.css";
+import "../css/NavBar.css";
 
 const Loading = () => {
-    return (
+  return (
+    <header className="primary-header padding-block-900">
+      <div className="container">
+        <h className="fs-primary-heading fw-bold">Loading...</h>
+      </div>
+    </header>
+  );
+};
 
-        <div className="QPageHeaderContainer">
-           <h1 id="home-hdr">Loading...</h1>
-        </div>
-
-      );
-}
- 
 export default Loading;
